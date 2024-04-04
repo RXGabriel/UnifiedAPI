@@ -15,4 +15,13 @@ describe('#RickAndMortyBRL', () => {
         const result = await RickAndMortyBRL.getCharactersFromJson()
         expect(result).toStrictEqual(expected)
     })
+
+    test('#getCharactersFromJson should return an empty list if the API returns nothing', async () => {
+        const response = JSON.parse(await fs.readFile('./test/mocks/characters-empty.json'))
+        const expected = response.results
+        jest.spyOn(axios, "get").mockResolvedValue({ data: response })
+
+        const result = await RickAndMortyBRL.getCharactersFromJson()
+        expect(result).toStrictEqual(expected)
+    })
 })
