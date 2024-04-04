@@ -1,7 +1,7 @@
 import { expect, describe, test, jest, beforeEach } from '@jest/globals'
 import axios from 'axios'
 import fs from 'fs/promises'
-import RickAndMortyBRL from '../../src/business/integrations/rickAndMortyBRL'
+import RickAndMortyBRL from '../../src/business/integrations/rickAndMortyBRL.js'
 import Character from '../../src/entities/character.js'
 
 describe('#RickAndMortyBRL', () => {
